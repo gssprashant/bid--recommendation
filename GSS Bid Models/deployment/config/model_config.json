@@ -1,0 +1,136 @@
+{
+  "feature_cols": [
+    "ZipCode_encoded",
+    "PropertyType_encoded",
+    "SubType_encoded",
+    "PropertyState_encoded",
+    "Market_encoded",
+    "Submarket_encoded",
+    "BusinessSegment_encoded",
+    "BidCompanyType_encoded",
+    "Year",
+    "Month",
+    "Week",
+    "DayOfWeek",
+    "PopulationEstimate_zip_ratio",
+    "AverageHouseValue_zip_ratio",
+    "IncomePerHousehold_zip_ratio",
+    "MedianAge_zip_ratio",
+    "NumberofBusinesses_zip_ratio",
+    "NumberofEmployees_zip_ratio",
+    "ZipPopulation_zip_ratio",
+    "rolling_7d_mean_fee",
+    "rolling_7d_median_fee",
+    "rolling_7d_win_rate",
+    "rolling_30d_mean_fee",
+    "rolling_30d_median_fee",
+    "rolling_30d_win_rate",
+    "rolling_90d_mean_fee",
+    "rolling_90d_median_fee",
+    "rolling_90d_win_rate",
+    "company_type_freq",
+    "property_type_freq",
+    "DistanceInMiles",
+    "JobCount",
+    "IECount",
+    "LeaseCount",
+    "SaleCount",
+    "PopulationEstimate",
+    "AverageHouseValue",
+    "IncomePerHousehold",
+    "MedianAge",
+    "NumberofBusinesses",
+    "NumberofEmployees"
+  ],
+  "categorical_cols": [
+    "ZipCode",
+    "PropertyType",
+    "SubType",
+    "PropertyState",
+    "Market",
+    "Submarket",
+    "BusinessSegment",
+    "BidCompanyType"
+  ],
+  "market_cols": [
+    "PopulationEstimate",
+    "AverageHouseValue",
+    "IncomePerHousehold",
+    "MedianAge",
+    "NumberofBusinesses",
+    "NumberofEmployees",
+    "ZipPopulation"
+  ],
+  "model_info": {
+    "type": "XGBRegressor",
+    "version": "1.0.0",
+    "created_at": "2025-10-23T13:51:56.367970",
+    "python_version": "3.12.5",
+    "package_versions": {
+      "xgboost": "3.0.5",
+      "scikit-learn": "1.5.0",
+      "pandas": "2.2.2",
+      "numpy": "1.26.4"
+    }
+  },
+  "performance": {
+    "cv_scores": {
+      "rmse_mean": 1396.877461601293,
+      "rmse_std": 45.962679594033624,
+      "mae_mean": 875.6570408308692,
+      "mae_std": 50.16719176993371,
+      "r2_mean": 0.4242941666231722,
+      "r2_std": 0.030325051030000993
+    },
+    "error_percentiles": {
+      "p25": 206.9459228515625,
+      "p50": 492.15771484375,
+      "p75": 989.257568359375,
+      "p90": 1767.2525390624999,
+      "p95": 2511.0305419921788,
+      "p99": 4726.298959960938
+    }
+  },
+  "feature_importance": [
+    {
+      "feature": "rolling_7d_mean_fee",
+      "importance": 0.26799169182777405
+    },
+    {
+      "feature": "PropertyType_encoded",
+      "importance": 0.07239639759063721
+    },
+    {
+      "feature": "PropertyState_encoded",
+      "importance": 0.06080387160181999
+    },
+    {
+      "feature": "rolling_30d_mean_fee",
+      "importance": 0.048273757100105286
+    },
+    {
+      "feature": "PopulationEstimate_zip_ratio",
+      "importance": 0.03770368918776512
+    },
+    {
+      "feature": "rolling_90d_mean_fee",
+      "importance": 0.029678288847208023
+    },
+    {
+      "feature": "DistanceInMiles",
+      "importance": 0.02930399216711521
+    },
+    {
+      "feature": "BusinessSegment_encoded",
+      "importance": 0.02927265502512455
+    },
+    {
+      "feature": "NumberofBusinesses_zip_ratio",
+      "importance": 0.02860157936811447
+    },
+    {
+      "feature": "NumberofEmployees_zip_ratio",
+      "importance": 0.02793157659471035
+    }
+  ]
+}

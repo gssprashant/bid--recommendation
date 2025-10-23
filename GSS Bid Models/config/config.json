@@ -1,0 +1,31 @@
+{
+    "data": {
+        "required_columns": [
+            "BidDate",
+            "BidAmount",
+            "WinStatus"
+        ],
+        "optional_columns": [
+            "ProjectType",
+            "Location",
+            "ClientType",
+            "EstimatedCost",
+            "CompetitorCount"
+        ]
+    },
+    "model": {
+        "random_state": 42,
+        "cv_folds": 5,
+        "test_size": 0.2
+    },
+    "paths": {
+        "models": "c:\\Users\\prash\\bid--recommendation\\GSS Bid Models\\models",
+        "data": "c:\\Users\\prash\\bid--recommendation\\GSS Bid Models\\data",
+        "config": "c:\\Users\\prash\\bid--recommendation\\GSS Bid Models\\config",
+        "deploy": "c:\\Users\\prash\\bid--recommendation\\GSS Bid Models\\deploy",
+        "model_file": "c:\\Users\\prash\\bid--recommendation\\GSS Bid Models\\models\\xgb_regressor.pkl",
+        "encoders_file": "c:\\Users\\prash\\bid--recommendation\\GSS Bid Models\\models\\encoders.pkl",
+        "metadata_file": "c:\\Users\\prash\\bid--recommendation\\GSS Bid Models\\config\\metadata.json",
+        "predictions_file": "c:\\Users\\prash\\bid--recommendation\\GSS Bid Models\\deploy\\predictions.csv"
+    }
+}
