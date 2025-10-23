@@ -1,0 +1,34 @@
+{
+    "feature_cols": [
+        "ProjectType",
+        "Location",
+        "ClientType",
+        "Year",
+        "Month",
+        "DayOfWeek",
+        "Quarter",
+        "RollingMeanBid_7d",
+        "RollingWinRate_7d",
+        "RollingBidCount_7d",
+        "RollingMeanBid_30d",
+        "RollingWinRate_30d",
+        "RollingBidCount_30d",
+        "RollingMeanBid_90d",
+        "RollingWinRate_90d",
+        "RollingBidCount_90d"
+    ],
+    "categorical_cols": [
+        "ProjectType",
+        "Location",
+        "ClientType"
+    ],
+    "metrics": {
+        "rmse": 60072.46225381231,
+        "mae": 33897.30298865885,
+        "r2": 0.777871451308999
+    },
+    "timestamp": "2025-10-23T22:46:57.883280",
+    "python_version": "3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 64 bit (AMD64)]",
+    "xgboost_version": "3.0.5",
+    "sklearn_version": "2.2.2"
+}
