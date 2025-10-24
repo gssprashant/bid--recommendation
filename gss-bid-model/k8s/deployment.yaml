@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bid-model
+  labels:
+    app: bid-model
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bid-model
+  template:
+    metadata:
+      labels:
+        app: bid-model
+    spec:
+      containers:
+      - name: bid-model
+        image: bid-model:latest
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "512Mi"
+          limits:
+            cpu: "1000m"
+            memory: "1Gi"
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        env:
+        - name: MODEL_PATH
+          value: "/app/models/xgboost_bid_model.joblib"
+        - name: CONFIG_PATH
+          value: "/app/config/config.json"
+        volumeMounts:
+        - name: model-volume
+          mountPath: /app/models
+        - name: config-volume
+          mountPath: /app/config
+      volumes:
+      - name: model-volume
+        persistentVolumeClaim:
+          claimName: model-pvc
+      - name: config-volume
+        configMap:
+          name: bid-model-config
