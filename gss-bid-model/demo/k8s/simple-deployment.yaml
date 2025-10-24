@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gss-bid-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gss-bid-demo
+  template:
+    metadata:
+      labels:
+        app: gss-bid-demo
+    spec:
+      containers:
+        - name: gss-bid-demo
+          image: "REPLACE_WITH_IMAGE:latest"
+          ports:
+            - containerPort: 8000
+          env:
+            - name: MODEL_DIR
+              value: "/app/models"

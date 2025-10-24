@@ -1,3 +1,42 @@
+# GSS Bid Model (MLOps-ready)
+
+This workspace contains a production-ready scaffold for the Bid Recommendation models. It includes:
+
+- Data pipeline and feature engineering with rolling and lagged features
+- Integration helper for FRED economic data (requires FRED API key)
+- Two-model training: Win probability (classification) and Bid amount (regression)
+- SHAP analysis utilities
+- Prediction + bid-optimization script that chooses the bid maximizing expected profit (P(win) * bid)
+
+Quick start (Windows PowerShell):
+
+1. Create a virtual environment and install dependencies
+
+```powershell
+python -m venv .venv; .\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+2. Prepare data
+- Place your CSV(s) into the `data/` directory. The training script expects a main CSV with columns: `BidDate`, `BidAmount`, `WinStatus`, and any optional columns like `ProjectType`, `Location`, `ClientType`, `EstimatedCost`, `CompetitorCount`.
+
+3. Train models (smoke test)
+
+```powershell
+python scripts\train.py --data-path data/sample_bid_data.csv --output models/
+```
+
+4. Predict an optimal bid for a new opportunity
+
+```powershell
+python scripts\predict_optimize.py --model-dir models/ --input-json examples/sample_input.json
+```
+
+Notes:
+- FRED integration requires setting environment variable `FRED_API_KEY` if you want to enrich data with official macro series.
+- The pipeline saves preprocessing pipeline and trained models into the `models/` directory.
+
+If you want, I can move your existing notebooks into `notebooks/` and run the smoke test. Confirm and I will proceed.
 # GSS Bid Recommendation Model
 
 An advanced machine learning system for optimal bid amount recommendations using XGBoost and time-series features.
